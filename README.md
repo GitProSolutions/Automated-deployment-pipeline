@@ -7,28 +7,34 @@ This repository contains a basic script to set up an automated deployment pipeli
 Prerequisites
 
 A server with Ubuntu installed.
+
 Git installed on the server.
+
 A GitHub repository containing your web application.
+
 Getting Started
-Clone this repository on your server.
-bash
-Copy code
+
+1. Clone this repository on your server.
+
 git clone https://github.com/GitProSolutions/automated-deployment-pipeline.git
-Run the script to set up Jenkins and deploy the web application.
-bash
-Copy code
+
+2. Run the script to set up Jenkins and deploy the web application.
+
 sudo ./deploy.sh
-Open your web browser and navigate to http://<your_server_ip>:8080. Follow the steps to set up Jenkins and create a new job.
 
-In the "Build Triggers" section, select "Poll SCM" and specify a schedule (e.g. H/15 * * * *).
+3. Open your web browser and navigate to http://<your_server_ip>:8080. Follow the steps to set up Jenkins and create a new job.
 
-In the "Build" section, select "Execute shell" and enter the following command:
+4. In the "Build Triggers" section, select "Poll SCM" and specify a schedule (e.g. H/15 * * * *).
 
-bash
-Copy code
+5. In the "Build" section, select "Execute shell" and enter the following command:
+
 sudo cp -r [YOUR_REPO]/* /var/www/html/ && sudo systemctl restart apache2
-Save the job and build it to test the deployment pipeline.
+
+6. Save the job and build it to test the deployment pipeline.
+
+
 Customization
+
 You can customize the script based on your specific requirements. For example, you can use a different web server, a different version of Jenkins, or a different Continuous Integration tool like TravisCI, CircleCI, etc.
 
 Contributing
