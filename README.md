@@ -16,19 +16,24 @@ Getting Started
 
 1. Clone this repository on your server.
 
+```shell
 git clone https://github.com/GitProSolutions/automated-deployment-pipeline.git
+```
 
 2. Run the script to set up Jenkins and deploy the web application.
 
+```shell
 sudo ./deploy.sh
-
+```
 3. Open your web browser and navigate to http://<your_server_ip>:8080. Follow the steps to set up Jenkins and create a new job.
 
 4. In the "Build Triggers" section, select "Poll SCM" and specify a schedule (e.g. H/15 * * * *).
 
 5. In the "Build" section, select "Execute shell" and enter the following command:
 
+```shell
 sudo cp -r [YOUR_REPO]/* /var/www/html/ && sudo systemctl restart apache2
+```
 
 6. Save the job and build it to test the deployment pipeline.
 
